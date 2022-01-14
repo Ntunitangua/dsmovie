@@ -15,6 +15,7 @@ public class Movie {
 	private String title;
 	private Double score;
 	private Integer count;
+	private String image;
 	
 	public Movie() {
 	}
@@ -58,9 +59,11 @@ public class Movie {
 		this.count = count;
 	}
 	
+	public String getImage() {
+		return image;
+	}
 	
-	
-	
-	
-	
+	public void setImage(String image) {
+		this.image=image;
+	}
 }
