@@ -1,31 +1,32 @@
-package com.nrp.dsmovie.entities;
+package com.nrp.dsmovie.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.nrp.dsmovie.entities.Movie;
 
-@Entity
-@Table(name="tb_movie")
-public class Movie {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+public class MovieDTO {
+	
 	private Long id;
 	private String title;
 	private Double score;
 	private Integer count;
 	private String image;
 	
-	public Movie() {
+	public MovieDTO() {
 	}
 
-	public Movie(Long id, String title, Double score, Integer count, String image) {
+	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
 		this.count = count;
 		this.image= image;
+	}
+	
+	public MovieDTO(Movie movie) {
+		id =movie.getId();
+		title = movie.getTitle();
+		score = movie.getScore();
+		count = movie.getCount();
+		image = movie.getImage();
 	}
 
 	public Long getId() {
@@ -67,4 +68,5 @@ public class Movie {
 	public void setImage(String image) {
 		this.image=image;
 	}
+
 }
